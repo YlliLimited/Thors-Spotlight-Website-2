@@ -282,6 +282,28 @@ em {
   object-position: center;
   filter: brightness(0.15) blur(1px) grayscale(1);
 }
+.ourStoryImage {
+  height: clamp(130px, 20vw, 200px);
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.7) grayscale(1);
+  border-bottom: 3px solid var(--contrast);
+}
+.ourStoryImageSmall {
+  height: clamp(65px, 10vw, 100px);
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.7) grayscale(1);
+  border-bottom: 3px solid var(--contrast);
+}
+.ourStoryColor {
+  height: clamp(130px, 20vw, 200px);
+  background-color: var(--contrast);
+}
+.ourStoryColorSmall {
+  height: clamp(65px, 10vw, 100px);
+  background-color: var(--contrast);
+}
 /* About Hero End */
 /* ABOUT PAGE END______________________________________ */
 
