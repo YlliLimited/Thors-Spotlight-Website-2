@@ -37,6 +37,9 @@ em {
   width: 100%;
   height: 100%;
 }
+.bgContrast {
+  background-color: var(--contrast);
+}
 /* Others End */
 
 /* Colors */
@@ -305,6 +308,26 @@ em {
   background-color: var(--contrast);
 }
 /* About Hero End */
+
+.ourOfficeImage {
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.7) grayscale(1);
+  max-height: 400px;
+}
+.teamImage {
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(1);
+  aspect-ratio: 3/4;
+}
+.clientsWorkImage {
+  object-fit: cover;
+  object-position: center;
+  filter:grayscale(1); 
+  width: 100%;
+  height: 100%;
+}
 /* ABOUT PAGE END______________________________________ */
 
 /* CONTACT PAGE______________________________________ */
