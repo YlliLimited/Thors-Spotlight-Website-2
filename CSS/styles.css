@@ -357,8 +357,11 @@ em {
   object-fit: cover;
   object-position: center;
   filter:  grayscale(1);
-  height: 100%;
   width: 100%;
+  height: 100%;
+}
+.servicesRow {
+  height: min-content;
 }
 /* Services Hero End */
 /* SERVICES PAGE END_____________________________ */
