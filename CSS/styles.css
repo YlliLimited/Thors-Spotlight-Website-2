@@ -73,6 +73,20 @@ em {
 }
 /* Fonts End */
 
+/* Loading Screen */
+#loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 9999;
+}
+.loadingLogo {
+  width: clamp(150px, 50vw, 350px);
+}
+
 /* Navbar */
 .navbarLogo {
   height: clamp(20px, 4.5vw, 30px);
