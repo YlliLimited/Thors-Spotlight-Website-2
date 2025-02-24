@@ -36,8 +36,8 @@ const cursory = window.screenY;
 const windowWidth = window.innerWidth;
 
 document.addEventListener("mousemove", (e) => {
-    cursorFollower.style.left = e.clientX - (1.3 * windowWidth) + "px";
-    cursorFollower.style.top = e.clientY - (1.3 * windowWidth)  + "px";
+    cursorFollower.style.left = e.clientX - (0.6 * windowWidth) + "px";
+    cursorFollower.style.top = e.clientY - (0.6 * windowWidth)  + "px";
 });
 
 // document.addEventListener("click", (e) => {
