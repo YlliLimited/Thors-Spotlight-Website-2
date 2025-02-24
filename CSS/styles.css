@@ -65,10 +65,10 @@ em {
   width: 1000vw;
   height: 1000vw;
   background-image: url("../Assets/Spotlight.webp");
-  opacity: 0.8;
+  opacity: 0.75;
   pointer-events: none;
   z-index: 9999;
-  transform: scale(1.2);
+  transition: all 0.2s ease-out;
 } 
 
 @media screen and (max-width: 992px) {
