@@ -15,8 +15,6 @@ document.addEventListener("readystatechange", (e) => {
     }
 });
 
-
-
 // Intersecton Observer
 const Observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -30,3 +28,22 @@ const Observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => Observer.observe(el));
 // End of Intersecton Observer
+
+//Cursor Follower
+const cursorFollower = document.getElementById("cursorFollower");
+const cursorx = window.screenX;
+const cursory = window.screenY;
+const windowWidth = window.innerWidth;
+
+document.addEventListener("mousemove", (e) => {
+    cursorFollower.style.left = e.clientX - (1.3 * windowWidth) + "px";
+    cursorFollower.style.top = e.clientY - (1.3 * windowWidth)  + "px";
+});
+
+// document.addEventListener("click", (e) => {
+//     cursorFollower.classList.add("click");
+//     setTimeout(() => {
+//         cursorFollower.classList.remove("click");
+//     }, 100);
+// });
+//Cursor Follower End
