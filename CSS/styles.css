@@ -48,17 +48,6 @@ em {
 .bgContrast {
   background-color: var(--contrast);
 }
-/* .cursorFollower {
-  position: fixed;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: white;
-  mix-blend-mode: difference;
-  pointer-events: none;
-  z-index: 9999;
-  transition: all 0.1s ease-out, transform 0.07s ease-out;
-} */
 
 .cursorFollower {
   position: fixed;
