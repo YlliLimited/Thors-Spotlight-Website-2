@@ -39,11 +39,4 @@ document.addEventListener("mousemove", (e) => {
     cursorFollower.style.left = e.clientX - (1.3 * windowWidth) + "px";
     cursorFollower.style.top = e.clientY - (1.3 * windowWidth)  + "px";
 });
-
-// document.addEventListener("click", (e) => {
-//     cursorFollower.classList.add("click");
-//     setTimeout(() => {
-//         cursorFollower.classList.remove("click");
-//     }, 100);
-// });
 //Cursor Follower End
