@@ -47,6 +47,11 @@ const videoBackground = document.getElementById("loadingVideoBackground");
 const closeButton = document.getElementById("closeButton");
 let videoPlayTimes = sessionStorage.getItem("videoPlayTimes") || "0";
 
+if (videoPlayTimes !== "1") {
+    window.onload = () => {
+        video.play();
+    };
+}
 if (videoPlayTimes === "1") {
     video.style.visibility = "hidden";
     videoBackground.style.visibility = "hidden";
