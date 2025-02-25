@@ -126,7 +126,7 @@ em {
   object-position: center;
   z-index: 19999;
   visibility: hidden;
-  animation: loadingVideoAnimation 17s linear;
+  animation: loadingVideoAnimation 5s linear;
 }
 .loadingVideoBackground {
   position: fixed;
@@ -137,12 +137,12 @@ em {
   background-color: black;
   z-index: 19998;
   visibility: hidden;
-  animation: loadingVideoAnimation 17s linear;
+  animation: loadingVideoAnimation 5s linear;
 }
 .closeButton {
   position: fixed;
   top: 2vw;
-  right: 2vw;
+  right: 4vw;
   z-index: 20000;
   color: white;
   border: none;
@@ -151,6 +151,11 @@ em {
   height: 30px;
   font-size: 20px;
   cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.1s ease-in;
+}
+.closeButton:hover {
+  opacity: 1;
 }
 /* Loading Video End */
 

@@ -47,18 +47,32 @@ const videoBackground = document.getElementById("loadingVideoBackground");
 const closeButton = document.getElementById("closeButton");
 let videoPlayTimes = sessionStorage.getItem("videoPlayTimes") || "0";
 
-export const checkUserAgentVideoAutoplay = async () => {
-    const video = document.querySelector("#video-bg");
+window.addEventListener("load", () => {
+    checkUserAgentVideoAutoplay();
+});
 
+const checkUserAgentVideoAutoplay = async () => {
     try {
         await video.play();
-
+        video.style.animation = "loadingVideoAnimation 17s linear";
+        videoBackground.style.animation = "loadingVideoAnimation 17s linear";
         video.setAttribute("autoplay", true);
-
-        console.log("video started playing successfully");
     } catch (err) {
+        sessionStorage.setItem("videoPlayTimes", "1");
         video.setAttribute("autoplay", false);
         video.setAttribute("controls", true);
+        video.onplay = () => {
+            video.style.visibility = "visible";
+            videoBackground.style.visibility = "visible";
+            video.style.animation = "none";
+            videoBackground.style.animation = "none";
+        };
+        video.onended = () => {
+            video.style.visibility = "hidden";
+            videoBackground.style.visibility = "hidden";
+            video.style.animation = "loadingVideoAnimation 2s linear";
+            videoBackground.style.animation = "loadingVideoAnimation 2s linear";
+        };
     }
 };
 if (videoPlayTimes === "1") {
