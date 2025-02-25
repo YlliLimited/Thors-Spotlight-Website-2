@@ -54,7 +54,7 @@ em {
   width: 1000vw;
   height: 1000vw;
   background-image: url("../Assets/Spotlight.webp");
-  opacity: 0.75;
+  opacity: 0.6;
   pointer-events: none;
   z-index: 9999;
   transition: all 0.2s ease-out;
