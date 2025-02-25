@@ -45,7 +45,7 @@ document.addEventListener("mousemove", (e) => {
 const video = document.getElementById("loadingVideo");
 const videoBackground = document.getElementById("loadingVideoBackground");
 const closeButton = document.getElementById("closeButton");
-let videoPlayTimes = localStorage.getItem("videoPlayTimes") || "0";
+let videoPlayTimes = sessionStorage.getItem("videoPlayTimes") || "0";
 
 if (videoPlayTimes === "1") {
     video.style.visibility = "hidden";
@@ -56,7 +56,7 @@ if (videoPlayTimes === "1") {
 }
 
 video.addEventListener("ended", () => {
-    localStorage.setItem("videoPlayTimes", "1");
+    sessionStorage.setItem("videoPlayTimes", "1");
 });
 
 closeButton.addEventListener("click", () => {
@@ -65,6 +65,6 @@ closeButton.addEventListener("click", () => {
     video.style.animation = "none";
     videoBackground.style.animation = "none";
     video.pause();
-    localStorage.setItem("videoPlayTimes", "1");
+    sessionStorage.setItem("videoPlayTimes", "1");
 });
 // Loading Video End
