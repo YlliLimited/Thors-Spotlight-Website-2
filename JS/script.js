@@ -52,36 +52,40 @@ window.addEventListener("load", () => {
 });
 
 const checkUserAgentVideoAutoplay = async () => {
-    try {
-        await video.play();
-        video.style.animation = "loadingVideoAnimation 17s linear";
-        videoBackground.style.animation = "loadingVideoAnimation 17s linear";
-        video.setAttribute("autoplay", true);
-    } catch (err) {
-        sessionStorage.setItem("videoPlayTimes", "1");
-        video.setAttribute("autoplay", false);
-        video.setAttribute("controls", true);
-        video.onplay = () => {
-            video.style.visibility = "visible";
-            videoBackground.style.visibility = "visible";
-            video.style.animation = "none";
-            videoBackground.style.animation = "none";
-        };
-        video.onended = () => {
-            video.style.visibility = "hidden";
-            videoBackground.style.visibility = "hidden";
-            video.style.animation = "loadingVideoAnimation 2s linear";
-            videoBackground.style.animation = "loadingVideoAnimation 2s linear";
-        };
-    }
+    if (videoPlayTimes === "1") {
+        video.style.visibility = "hidden";
+        videoBackground.style.visibility = "hidden";
+        video.style.animation = "none";
+        videoBackground.style.animation = "none";
+        video.pause();
+    } else {
+        try {
+            await video.play();
+            video.style.animation = "loadingVideoAnimation 17s linear";
+            videoBackground.style.animation =
+                "loadingVideoAnimation 17s linear";
+            video.setAttribute("autoplay", true);
+            sessionStorage.setItem("videoPlayTimes", "1");
+        } catch (err) {
+            sessionStorage.setItem("videoPlayTimes", "1");
+            video.setAttribute("autoplay", false);
+            video.setAttribute("controls", true);
+            video.onplay = () => {
+                video.style.visibility = "visible";
+                videoBackground.style.visibility = "visible";
+                video.style.animation = "none";
+                videoBackground.style.animation = "none";
+            };
+            video.onended = () => {
+                video.style.visibility = "hidden";
+                videoBackground.style.visibility = "hidden";
+                video.style.animation = "loadingVideoAnimation 2s linear";
+                videoBackground.style.animation =
+                    "loadingVideoAnimation 2s linear";
+            };
+        }
+    }   
 };
-if (videoPlayTimes === "1") {
-    video.style.visibility = "hidden";
-    videoBackground.style.visibility = "hidden";
-    video.style.animation = "none";
-    videoBackground.style.animation = "none";
-    video.pause();
-}
 
 video.addEventListener("ended", () => {
     sessionStorage.setItem("videoPlayTimes", "1");

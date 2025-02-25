@@ -151,7 +151,7 @@ em {
   height: 30px;
   font-size: 20px;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.6;
   transition: opacity 0.1s ease-in;
 }
 .closeButton:hover {
