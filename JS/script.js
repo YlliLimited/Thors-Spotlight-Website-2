@@ -47,11 +47,20 @@ const videoBackground = document.getElementById("loadingVideoBackground");
 const closeButton = document.getElementById("closeButton");
 let videoPlayTimes = sessionStorage.getItem("videoPlayTimes") || "0";
 
-if (videoPlayTimes !== "1") {
-    window.onload = () => {
-        video.play();
-    };
-}
+export const checkUserAgentVideoAutoplay = async () => {
+    const video = document.querySelector("#video-bg");
+
+    try {
+        await video.play();
+
+        video.setAttribute("autoplay", true);
+
+        console.log("video started playing successfully");
+    } catch (err) {
+        video.setAttribute("autoplay", false);
+        video.setAttribute("controls", true);
+    }
+};
 if (videoPlayTimes === "1") {
     video.style.visibility = "hidden";
     videoBackground.style.visibility = "hidden";
