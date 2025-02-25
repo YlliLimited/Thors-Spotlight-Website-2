@@ -36,7 +36,35 @@ const cursory = window.screenY;
 const windowWidth = window.innerWidth;
 
 document.addEventListener("mousemove", (e) => {
-    cursorFollower.style.left = e.clientX - (1.3 * windowWidth) + "px";
-    cursorFollower.style.top = e.clientY - (1.3 * windowWidth)  + "px";
+    cursorFollower.style.left = e.clientX - 1.3 * windowWidth + "px";
+    cursorFollower.style.top = e.clientY - 1.3 * windowWidth + "px";
 });
 //Cursor Follower End
+
+// Loading Video
+const video = document.getElementById("loadingVideo");
+const videoBackground = document.getElementById("loadingVideoBackground");
+const closeButton = document.getElementById("closeButton");
+let videoPlayTimes = localStorage.getItem("videoPlayTimes") || "0";
+
+if (videoPlayTimes === "1") {
+    video.style.visibility = "hidden";
+    videoBackground.style.visibility = "hidden";
+    video.style.animation = "none";
+    videoBackground.style.animation = "none";
+    video.pause();
+}
+
+video.addEventListener("ended", () => {
+    localStorage.setItem("videoPlayTimes", "1");
+});
+
+closeButton.addEventListener("click", () => {
+    video.style.visibility = "hidden";
+    videoBackground.style.visibility = "hidden";
+    video.style.animation = "none";
+    videoBackground.style.animation = "none";
+    video.pause();
+    localStorage.setItem("videoPlayTimes", "1");
+});
+// Loading Video End

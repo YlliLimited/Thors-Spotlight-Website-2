@@ -102,6 +102,58 @@ em {
 }
 /* Fonts End */
 
+/* Loading Video */
+@keyframes loadingVideoAnimation {
+  0% {
+    visibility: visible;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loadingVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  object-position: center;
+  z-index: 19999;
+  visibility: hidden;
+  animation: loadingVideoAnimation 17s linear;
+}
+.loadingVideoBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 19998;
+  visibility: hidden;
+  animation: loadingVideoAnimation 17s linear;
+}
+.closeButton {
+  position: fixed;
+  top: 2vw;
+  right: 2vw;
+  z-index: 20000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* Loading Video End */
+
 /* Loading Screen */
 #loadingScreen {
   position: fixed;
