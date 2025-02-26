@@ -464,7 +464,7 @@ em {
 /* Contact Hero */
 .contactHero {
   max-height: fit-content;
-  height: 70vh;
+  height: 60vh;
 }
 .contactHeroImage {
   height: inherit;
