@@ -1,3 +1,5 @@
+
+
 const loadingScreen = document.getElementById("loadingScreen");
 
 function hideLoadingScreen() {
