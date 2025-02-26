@@ -98,3 +98,23 @@ closeButton.addEventListener("click", () => {
     sessionStorage.setItem("videoPlayTimes", "1");
 });
 // Loading Video End
+
+
+
+// start video at frame 0
+var frameNumber = 0,
+        
+// lower numbers = faster playback
+playbackConst = 1000, 
+
+// select video element         
+vid = document.getElementById('scrollingVideo'); 
+
+// Use requestAnimationFrame for smooth playback
+function scrollPlay(){  
+var frameNumber  = window.scrollY / playbackConst;
+vid.currentTime  = frameNumber;
+window.requestAnimationFrame(scrollPlay);
+}
+
+window.requestAnimationFrame(scrollPlay);

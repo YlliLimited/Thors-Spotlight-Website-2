@@ -526,3 +526,11 @@ em {
 }
 /* Services Hero End */
 /* SERVICES PAGE END_____________________________ */
+
+#scrollingVideo {
+  display: inline-block;
+  margin: 0 auto;
+  position: sticky;
+  top:0px;
+  width: 100%;
+}
