@@ -101,18 +101,18 @@ closeButton.addEventListener("click", () => {
 
 
 
-// start video at frame 0
-var frameNumber = 0,
+ // start video at frame 0
+ var frameNumber = 0,
         
-// lower numbers = faster playback
-playbackConst = 1000, 
+ // lower numbers = faster playback
+ playbackConst = 800, 
 
-// select video element         
-vid = document.getElementById('scrollingVideo'); 
+ // select video element         
+ vid = document.getElementById('scrollingVideo'); 
 
 // Use requestAnimationFrame for smooth playback
 function scrollPlay(){  
-var frameNumber  = window.scrollY / playbackConst;
+var frameNumber  = window.scrollY/playbackConst;
 vid.currentTime  = frameNumber;
 window.requestAnimationFrame(scrollPlay);
 }

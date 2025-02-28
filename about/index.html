@@ -19,8 +19,6 @@
         <script src="/JS/script.js" defer async></script>
     </head>
     <body>
-        
-
         <!-- Loading Screen -->
         <div
             id="loadingScreen"
@@ -34,7 +32,7 @@
             <div class="spinner-border text-danger" role="status"></div>
         </div>
         <!-- Loading Screen -->
-         <!-- Cursor Follower -->
+        <!-- Cursor Follower -->
         <div class="cursorFollower" id="cursorFollower"></div>
         <!-- Cursor Follower End -->
         <!-- Navbar -->
@@ -136,6 +134,17 @@
             </div>
         </section>
         <!-- Hero End -->
+
+        <div style="height: 1000vh; text-align: center; width: 100%">
+            <video
+                id="scrollingVideo"
+                tabindex="0"
+                autobuffer
+                preload
+                src="../Assets/Videos/thors intro per web.mp4"
+                controls
+            ></video>
+        </div>
 
         <!-- Our Story -->
         <section class="ourStory py-5 my-5">
@@ -524,7 +533,9 @@
                         <div
                             class="d-flex justify-content-start align-items-center mb-2"
                         >
-                            <i class="bi bi-quote hidden text-danger display-4"></i>
+                            <i
+                                class="bi bi-quote hidden text-danger display-4"
+                            ></i>
                             <hr
                                 class="border-top border-2 border-danger mb-4 w-100 ms-4"
                             />
@@ -591,7 +602,11 @@
         <section
             class="py-4 footer d-flex justify-content-center align-items-center flex-column"
         >
-            <img src="/Assets/Images/logo.png" class="footerLogo hidden" alt="" />
+            <img
+                src="/Assets/Images/logo.png"
+                class="footerLogo hidden"
+                alt=""
+            />
             <div class="container">
                 <hr class="border-top border-danger w-100 mt-5" />
                 <div class="row mt-5 hidden">
