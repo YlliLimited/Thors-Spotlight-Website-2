@@ -108,15 +108,16 @@ if (video) {
 const frameNumber = 0;
 
 // lower numbers = faster playback
-const playbackConst = 400;
+const playbackConst = window.innerHeight *  0.95;
 
 // select video element
 const vid = document.getElementById("scrollingVideo");
 
 // Use requestAnimationFrame for smooth playback
 function scrollPlay() {
-    let frameNumber = window.scrollY / playbackConst;
+    let frameNumber =  Math.round(((window.scrollY / playbackConst) + Number.EPSILON) * 100) / 100;
     vid.currentTime = frameNumber;
+    console.log(frameNumber);
     window.requestAnimationFrame(scrollPlay);
 }
 
