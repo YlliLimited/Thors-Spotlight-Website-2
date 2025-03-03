@@ -115,7 +115,7 @@ const vid = document.getElementById("scrollingVideo");
 
 // Use requestAnimationFrame for smooth playback
 function scrollPlay() {
-    let frameNumber =  Math.round(((window.scrollY / playbackConst) + Number.EPSILON) * 100) / 100;
+    let frameNumber =  Math.round(((window.scrollY / playbackConst) + Number.EPSILON) * 1000) / 1000;
     vid.currentTime = frameNumber;
     console.log(frameNumber);
     window.requestAnimationFrame(scrollPlay);
