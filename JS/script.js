@@ -129,5 +129,4 @@ window.addEventListener("scroll", () => {
         Math.round((window.scrollY / playbackConst + Number.EPSILON) * 1000) /
         1000;
     vid.currentTime = frameNumber;
-    console.log(frameNumber);
 });
