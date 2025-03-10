@@ -108,17 +108,26 @@ if (video) {
 const frameNumber = 0;
 
 // lower numbers = faster playback
-const playbackConst = window.innerHeight *  0.95;
+// const playbackConst = window.innerHeight * 0.95;
+const playbackConst = 700;
 
 // select video element
 const vid = document.getElementById("scrollingVideo");
 
 // Use requestAnimationFrame for smooth playback
-function scrollPlay() {
-    let frameNumber =  Math.round(((window.scrollY / playbackConst) + Number.EPSILON) * 1000) / 1000;
+// function scrollPlay() {
+//     let frameNumber =  Math.round(((window.scrollY / playbackConst) + Number.EPSILON) * 1000) / 1000;
+//     vid.currentTime = frameNumber;
+//     console.log(frameNumber);
+//     window.requestAnimationFrame(scrollPlay);
+// }
+
+// window.requestAnimationFrame(scrollPlay);
+
+window.addEventListener("scroll", () => {
+    let frameNumber =
+        Math.round((window.scrollY / playbackConst + Number.EPSILON) * 1000) /
+        1000;
     vid.currentTime = frameNumber;
     console.log(frameNumber);
-    window.requestAnimationFrame(scrollPlay);
-}
-
-window.requestAnimationFrame(scrollPlay);
+});
